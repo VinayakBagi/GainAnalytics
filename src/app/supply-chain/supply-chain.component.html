@@ -1,0 +1,76 @@
+<section id="about">
+  <div class="container">
+    <div class="row about-container">
+      <div class="col-lg-12">
+        <h2 class="title">Supply Chain</h2>
+      </div>
+      <div class="col-lg-6 content order-lg-1 order-1">
+        <p style="text-align: justify;">
+          No matter what size of business you are. Your data opens next gate of SUCCESS for You
+        </p>
+        <a [routerLink]='"/contact"' class="btn-req-quote">Request a quote</a>
+        <a [routerLink]='"/contact"' class="btn-req-quote">Request a demo</a>
+        <div style="margin-top: 40px;">
+          <canvas baseChart
+            [data]="polarAreaChartData"
+            [labels]="polarAreaChartLabels"
+            [legend]="polarAreaLegend"
+            [chartType]="polarAreaChartType">
+         </canvas>
+        </div>
+      </div>
+        <div [class]="'col-lg-6 background order-lg-2 order-2'">
+          <div>
+            <canvas baseChart
+              [datasets]="radarChartData"
+              [options]="radarChartOptions"
+              [labels]="radarChartLabels"
+              [chartType]="radarChartType">
+            </canvas>
+         </div>
+          <div>
+              <canvas baseChart
+                [data]="pieChartData"
+                [labels]="pieChartLabels"
+                [chartType]="pieChartType">
+              </canvas>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Key Features -->
+<section id="call-to-action"
+  [style.background]="'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6))'">
+  <div class="container wow fadeIn">
+    <div class="row">
+      <div class="col-lg-8 text-center text-lg-left">
+        <h2 class="cta-title">Key Features</h2><br>
+        <p class="cta-text" *ngFor="let feature of supplyChainData.features; let i = index">{{i + 1}}. {{feature}}</p>
+      </div>
+      <div class="col-lg-4 cta-btn-container text-center">
+        <h1 class="cta-btn align-middle" style="font-size: 38px;">Analytics for effective Customer relationship, Operational efficiency and Better returns
+        </h1>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Key Benefits -->
+<section id="about">
+  <div class="container">
+    <div class="row about-container">
+      <div class="col-lg-12">
+        <h2 class="title">Key Benefits</h2>
+      </div>
+      <div class="col-lg-8 content order-lg-1 order-1">
+        <p class="cta-text" *ngFor="let benefits of supplyChainData.benefits; let i = index">{{i + 1}}. {{benefits}}</p>
+      </div>
+      <div class="col-lg-4 content order-lg-2 order-2">
+        <img class="thumbnail" [src]="supplyChainData.benefitImageUrl" alt="supply-chain-benefit">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+

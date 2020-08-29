@@ -1,0 +1,45 @@
+<header id="header" [ngClass]="{'header-fixed': addHeaderFix }">
+    <div class="container">
+        <div id="logo" class="pull-left">
+            <a [routerLink]='"/"'><img src="../assets/ga2.png" alt="" title="" /></a>
+        </div>
+        <!-- for web view start -->
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                <li><a [routerLink]='"/"'>Home</a></li>
+                <li><a [routerLink]='"/about-us"'>About Us</a></li>
+                <li class="menu-has-children" (click)="toggleDropdown()"><a href="javascript:void(0)">Domain</a>
+                    <ul *ngIf="showDomains">
+                        <li><a [routerLink]='"/supply-chain"' (click)="$event.stopPropagation()">Supply Chain</a></li>
+                        <li><a [routerLink]='"/health-care"' (click)="$event.stopPropagation()">Health Care</a></li>
+                        <li><a [routerLink]='"/manufacturing"' (click)="$event.stopPropagation()">Manufacturing</a></li>
+                    </ul>
+                </li>
+                <li><a routerLinkActive="menu-active" [routerLink]='"/contact"'>Contact Us</a></li>
+            </ul>
+        </nav>
+        <!-- for web view end -->
+
+        <!-- for mobile view start-->
+        <div class="mobile-nav-active">
+          <nav *ngIf="showMenu" id="mobile-nav">
+            <ul>
+                <li><a [routerLink]='"/"'>Home</a></li>
+                <li><a [routerLink]='"/about-us"'>About Us</a></li>
+                <li class="menu-has-children" (click)="toggleDropdown()">
+                  <i class="fa" [ngClass]="faCheronDown?'fa-chevron-down':'fa-chevron-up'" ></i><a href="javascript:void(0)">Domain</a>
+                    <ul *ngIf="showDomains">
+                        <li><a [routerLink]='"/supply-chain"' (click)="$event.stopPropagation()">Supply Chain</a></li>
+                        <li><a [routerLink]='"/health-care"' (click)="$event.stopPropagation()">Health Care</a></li>
+                        <li><a [routerLink]='"/manufacturing"' (click)="$event.stopPropagation()">Manufacturing</a></li>
+                    </ul>
+                </li>
+                <li><a routerLinkActive="menu-active" [routerLink]='"/contact"'>Contact Us</a></li>
+            </ul>
+          </nav><!-- #mobile-nav -->
+          <button type="button" id="mobile-nav-toggle"><i class="fa fa-bars" (click)="showMenu = !showMenu"></i></button>
+          <div *ngIf="showMenu" id="mobile-body-overly" (click)="showMenu = !showMenu"></div>
+        </div>
+        <!-- for mobile view end-->
+    </div>
+</header><!-- #header -->
