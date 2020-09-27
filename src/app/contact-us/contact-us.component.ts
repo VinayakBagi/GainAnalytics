@@ -39,8 +39,12 @@ export class ContactUsComponent implements OnInit {
                 <b>Message: </b>${this.contactForm.value.message}<br/><br/>
                 <b>End of Message.</b> `
       }).then( message => {
-            alert(message);
-            // this.contactForm.reset();
+          if(message === 'OK') {
+            message = 'Mail sent successfully.'
+            this.contactForm.reset();
+            this.submitted = false;
+          }
+          alert(message);
       });
     }
   }
