@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SupplyChainComponent } from './supply-chain/supply-chain.component';
 import { HealthCareComponent } from './health-care/health-care.component';
 import { ManufacturingComponent } from './manufacturing/manufacturing.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ManufacturingComponent } from './manufacturing/manufacturing.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ChartsModule
+    ChartsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

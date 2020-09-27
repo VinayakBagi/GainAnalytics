@@ -1,7 +1,7 @@
 <section id="contact">
     <div class="container wow fadeInUp">
       <div class="section-header">
-        <h3 class="section-title">Contact</h3>
+        <h3 class="section-title padding-top-20">Contact</h3>
         <p class="section-description">The first step we need to take is for us to understand your needs, so give us a way to reach out to you and let's get to work.</p>
       </div>
     </div>
@@ -34,22 +34,24 @@
           <div class="form">
             <div id="sendmessage">Your message has been sent. Thank you!</div>
             <div id="errormessage"></div>
-            <form action="" method="post" role="form" class="contactForm">
+            <form [formGroup]="contactForm" class="contactForm" (ngSubmit)="onSubmit()">
               <div class="form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                <div class="validation"></div>
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" formControlName="name"/>
+                <div class="validation" *ngIf="(contactForm.controls.name.touched || submitted) && contactForm.controls.name.errors?.required">Name is required</div>
               </div>
               <div class="form-group">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                <div class="validation"></div>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" formControlName="email"/>
+                <div class="validation" *ngIf="(contactForm.controls.email.touched || submitted) && contactForm.controls.email.errors?.required">Email is required</div>
+                <div class="validation" *ngIf="contactForm.controls.email.touched && contactForm.controls.email.errors?.email">Enter a valid email address</div>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                <div class="validation"></div>
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" formControlName="subject"/>
+                <div class="validation" *ngIf="(contactForm.controls.subject.touched || submitted) && contactForm.controls.subject.errors?.required">Subject is required</div>
+                <div class="validation" *ngIf="contactForm.controls.subject.touched && contactForm.controls.subject.errors?.minlength">Subject length should be at least 8 characters</div>
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                <div class="validation"></div>
+                <textarea class="form-control" name="message" rows="5" formControlName="message" placeholder="Message"></textarea>
+                <div class="validation" *ngIf="(contactForm.controls.message.touched || submitted) && contactForm.controls.message.errors?.required">Please write something for us</div>
               </div>
               <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
