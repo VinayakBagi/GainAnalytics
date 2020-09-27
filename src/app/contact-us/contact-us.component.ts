@@ -29,7 +29,7 @@ export class ContactUsComponent implements OnInit {
       Email.send({
         Host : 'smtp.gainanalytics.in',
         Username : 'amardeep@gainanalytics.in',
-        Password : 'gain2020@',
+        Password : '****',
         To : 'kenj@gainanalytics.in,amardeep@gainanalytics.in',
         From : 'amardeep@gainanalytics.in',
         Subject : `${this.contactForm.value.subject}`,
