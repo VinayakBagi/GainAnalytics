@@ -104,7 +104,7 @@ body {
 
   #header #logo img {
     padding: 0;
-    margin-top: -61px;
+    margin-top: -15px;
   }
 
   #header.header-fixed {
@@ -315,6 +315,10 @@ body {
 
   .nav-menu ul ul {
     margin: 0;
+  }
+
+  .padding-top-20 {
+    padding-top: 20px;
   }
 
   /* Mobile Nav Toggle */
@@ -741,7 +745,10 @@ body {
   #team .member .pic {
     margin-bottom: 15px;
     overflow: hidden;
-    height: 260px;
+    /* height: 260px; */
+    width: 330px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   #team .member .pic img {
@@ -859,7 +866,7 @@ body {
 
   #contact .form .validation {
     color: red;
-    display: none;
+    /* display: none; */
     margin: 0 0 20px;
     font-weight: 400;
     font-size: 13px;
@@ -922,7 +929,7 @@ body {
     }
     #header #logo img {
       max-height: 75px;
-      margin-top: -30px;
+      /* margin-top: -30px; */
     }
   }
 
