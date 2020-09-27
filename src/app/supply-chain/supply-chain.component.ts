@@ -38,8 +38,7 @@ export class SupplyChainComponent implements OnInit {
         'Segmentation and Clustering. These analysis also helps in setting modalities to help your field and onshore employees better manage operations.',
         'Connected. Being able to access unstructured data from various channels, structured data from the Internet of Things (IoT) and more traditional data sets available through traditional ERP and B2B integration tools.',
         'Collaborative. Improving collaboration with suppliers increasingly means the use of cloud-based commerce networks to enable multi-enterprise collaboration and engagement.',
-        'Comprehensive. Analytics capabilities must be scaled with data in real time. Insights will be comprehensive and fast.',
-        'hi i am vinayak'
+        'Comprehensive. Analytics capabilities must be scaled with data in real time. Insights will be comprehensive and fast.'
       ],
       benefits: [
         'Have 360° view of your transactions in seconds even with huge volume of data. Using latest technologies we enable you to achieve a scaled level of viewership on your data at your figure tips, no matter where you are moving.',
