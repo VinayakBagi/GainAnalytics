@@ -7,25 +7,28 @@
 <!--main section -->
 <main id="main">
 <ng-container *ngFor="let domain of homepageContent; let i = index">
-  <section id="about">
+  <section id="about" [ngStyle]="{'padding-top': i > 0 ? '0px' : '80px'}">
     <div class="container">
       <div class="row about-container">
         <div class="col-lg-12">
           <h2 class="title"><a [routerLink]="['/', domain.title.replace(' ', '-').toLowerCase()]">{{domain.title}}</a></h2>
         </div>
-        <div class="col-lg-6 content order-lg-'+domain.textOrder+' order-2">
-          <p style="text-align: justify;">
+        <div [class]="'col-lg-5 content order-lg-'+domain.textOrder+' order-2'">
+          <p *ngIf="innerWidth > 991" style="text-align: justify;" [ngStyle]="{'padding': i % 2 == 0 ? '0 20px 0 0' : '0 0 0 20px'}">
+            {{domain.description}}
+          </p>
+          <p *ngIf="innerWidth <= 991" style="text-align: justify;">
             {{domain.description}}
           </p>
         </div>
-        <div [class]="'col-lg-6 background order-lg-'+domain.imageOrder+' order-1 wow fadeInRight'"
+        <div [class]="'col-lg-7 background order-lg-'+domain.imageOrder+' order-1 wow fadeInRight'"
           [style.background]="'url('+domain.mainUrl+') center center no-repeat'"
           ></div>
       </div>
     </div>
   </section><!-- #about -->
   <!--sub-section -->
-  <section id="call-to-action"
+  <!-- <section id="call-to-action"
     [style.background]="'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('+domain.subUrl+') fixed center center'">
     <div class="container wow fadeIn">
       <div class="row">
@@ -36,7 +39,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 </ng-container>
 </main>
 <div style="margin-top: 5px;"></div>
